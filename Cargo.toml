@@ -1,0 +1,39 @@
+[workspace]
+
+members = [
+  "crates/*",
+]
+
+# ---------------------------------------------------------------------------------------------------------------------
+# Shared workspace-wide package attributes
+# ---------------------------------------------------------------------------------------------------------------------
+
+[workspace.package]
+
+authors = ["Sofair Contributors <info@sofair.io>"]
+license = "MIT or Apache-2.0"
+documentation = "https://documents.sofair.io/context"
+homepage = "https://products.sofair.io/context"
+repository = "https://github.com/SofairOfficial/context"
+edition = "2021"
+rust-version = "1.69"
+
+# ---------------------------------------------------------------------------------------------------------------------
+# Shared workspace-wide package dependencies
+# ---------------------------------------------------------------------------------------------------------------------
+
+[workspace.dependencies]
+
+# ---------------------------------------------------------------------------------------------------------------------
+# Release profiles definition
+# ---------------------------------------------------------------------------------------------------------------------
+
+[profile.release]
+lto = true
+codegen-units = 1
+incremental = false
+
+[profile.bench]
+lto = true
+codegen-units = 1
+incremental = false
